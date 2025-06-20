@@ -38,6 +38,10 @@ create_form.onsubmit = (e) => {
   showCancelButton: true,
   confirmButtonText: "Yes, save it",
   cancelButtonText: "No, cancel",
+  confirmButtonColor:'#ffcc00',
+     background:flag=="dark"? ' #1a1a1a':'#fff',
+     color:flag=="dark"?'#fff':'#000',
+     width:'80%',
 }).then((result) => {
   if (result.isConfirmed) {
     Sites_array.push(t);
@@ -45,9 +49,25 @@ create_form.onsubmit = (e) => {
     create_form.reset();
     displayTable(Sites_array);
 document.querySelector(".message_password").textContent="";
-    Swal.fire("Saved!", "The data was added successfully.", "success");
+   Swal.fire({
+  title: "✅ Saved!",
+  text: "The data was added successfully.",
+  icon: "success",
+  background: flag === "dark" ? "#1a1a1a" : "#fff",
+  color: flag === "dark" ? "#fff" : "#000",
+  confirmButtonColor: "#ffcc00"
+});
+
   } else if (result.isDismissed) {
-    Swal.fire("Cancelled", "The data was not saved.", "info");
+    Swal.fire({
+  title: "Cancelled",
+  text: "The data was not saved.",
+  icon: "info",
+  background: flag === "dark" ? "#1a1a1a" : "#fff",
+  color: flag === "dark" ? "#fff" : "#000",
+  confirmButtonColor: "#ffcc00"
+});
+
   }
 });
 
@@ -83,16 +103,33 @@ function remove(index) {
     showCancelButton: true,
     confirmButtonText: "Save",
     denyButtonText: `Don't save`,
+    confirmButtonColor:'#ffcc00',
+     background:flag=="dark"? ' #1a1a1a':'#fff',
+     color:flag=="dark"?'#fff':'#000',
+     width:'80%',
   }).then((result) => {
     if (result.isConfirmed) {
       //save
       Sites_array.splice(index, 1);
       localStorage.setItem("Sites", JSON.stringify(Sites_array));
       displayTable(Sites_array);
-      Swal.fire("Saved!", "", "success");
+       Swal.fire({
+  title: '✅ Saved!',
+  icon: 'success',
+  background: flag == "dark" ? '#1a1a1a' : '#fff',
+  color: flag == "dark" ? '#fff' : '#000',
+  confirmButtonColor: '#ffcc00',
+});
     } else if (result.isDenied) {
       //don't save
-      Swal.fire("Changes are not saved", "", "info");
+       Swal.fire({
+  title: 'Changes are not saved',
+  icon: 'info',
+  background: flag == "dark" ? '#1a1a1a' : '#fff',
+  color: flag == "dark" ? '#fff' : '#000',
+  confirmButtonColor: '#ffcc00',
+});
+
     }
   });
 }
@@ -103,16 +140,34 @@ btn_deleteall.onclick=(e)=>{
     showCancelButton: true,
     confirmButtonText: "Save",
     denyButtonText: `Don't save`,
+    confirmButtonColor:'#ffcc00',
+     background:flag=="dark"? ' #1a1a1a':'#fff',
+     color:flag=="dark"?'#fff':'#000',
+     width:'80%',
   }).then((result) => {
     if (result.isConfirmed) {
       //save
       localStorage.removeItem("Sites");
       Sites_array=[];
       displayTable(Sites_array);
-      Swal.fire("Saved!", "", "success");
+      Swal.fire({
+  title: '✅ Saved!',
+  icon: 'success',
+  background: flag == "dark" ? '#1a1a1a' : '#fff',
+  color: flag == "dark" ? '#fff' : '#000',
+  confirmButtonColor: '#ffcc00',
+});
+
     } else if (result.isDenied) {
       //don't save
-      Swal.fire("Changes are not saved", "", "info");
+      Swal.fire({
+  title: 'Changes are not saved',
+  icon: 'info',
+  background: flag == "dark" ? '#1a1a1a' : '#fff',
+  color: flag == "dark" ? '#fff' : '#000',
+  confirmButtonColor: '#ffcc00',
+});
+
     }
   });
 }
@@ -121,16 +176,31 @@ function edit(index) {
   Swal.fire({
     title: 'Edit Info',
     html: `
+    <div class="text-center d-flex-col gap-15 jus">
+    <div>
     <label>NameUser</label>
       <input id="swal-name" class="swal2-input" placeholder="NameUser" value="${Sites_array[index].username}">
+      </div>
+      <div>
       <label>EmailUser</label>
       <input id="swal-email" class="swal2-input" placeholder="EmailUser" value="${Sites_array[index].emailuser}">
-      <label>Password</label>
+      </div>
+<div>
+      <label>Password </label>
       <input id="swal-pass" class="swal2-input" placeholder="Password" value="${Sites_array[index].password}">
-    `,
+   </div>
+   </div>
+      `,
     confirmButtonText: 'Save',
      backdrop: true,
+     confirmButtonColor:'#ffcc00',
+     background:flag=="dark"? ' #1a1a1a':'#fff',
+     color:flag=="dark"?'#fff':'#000',
+     width:'80%',
     focusConfirm: false,
+     customClass: {
+    confirmButton: 'my-btn-confirm'
+  },
     preConfirm: () => {
       const newName = document.getElementById('swal-name').value.trim();
       const newEmail = document.getElementById('swal-email').value.trim();
@@ -140,7 +210,10 @@ function edit(index) {
         Swal.showValidationMessage("All fields are required!");
         return false;
       }
-
+     if (!newEmail.includes('@')) {
+  Swal.showValidationMessage("Please enter a valid email.");
+  return false;
+}
       return { newName, newEmail, newPass };
     }
   }).then((result) => {
@@ -152,23 +225,29 @@ function edit(index) {
       Sites_array[index].password = data.newPass;
       localStorage.setItem("Sites", JSON.stringify(Sites_array));
       displayTable(Sites_array);
-      Swal.fire('✅ Saved!', '', 'success');
+      Swal.fire({
+  title: '✅ Saved!',
+  icon: 'success',
+  background: flag == "dark" ? '#1a1a1a' : '#fff',
+  color: flag == "dark" ? '#fff' : '#000',
+  confirmButtonColor: '#ffcc00',
+});
+
     }
   });
 }
 
-/*
 window.onscroll = function (e) {
-  const header = document.querySelector(".header");
-  const create_user = document.querySelector(".create-user");
+ const image_move=document.querySelector(".image_move");
+ const create_form=document.querySelector(".create-user");
   console.log(e);
-  console.log(create_user.offsetTop);
+  console.log(create_form.offsetTop);
   console.log(window.scrollY);
-  if (window.scrollY > create_user.offsetTop) {
-    header.classList.add("changeheader");
-  } else header.classList.remove("changeheader");
+  if (window.scrollY > create_form.offsetTop) {
+    image_move.classList.add("anim_slide");
+  } 
 };
-*/
+
 /*validation */
 siteNameInput.onblur = (e) => {
   console.log(e);
@@ -270,10 +349,10 @@ let btn_eye = document.querySelector(".showpass");
 btn_eye.onclick = () => {
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
-     btn_eye.innerHTML = '<i class="fa fa-eye-slash"></i>';
+     btn_eye.innerHTML = '<i class="fa fa-eye"></i>';
   } else {
     passwordInput.type = "password";
-    btn_eye.innerHTML = '<i class="fa fa-eye"></i>';
+    btn_eye.innerHTML = '<i class="fa fa-eye-slash"></i>';
    ;
   }
 };
@@ -307,10 +386,11 @@ const inputsearch = document.querySelector(".search_by_name");
 inputsearch.addEventListener("input", function (e) {
   console.log(e);
   const arrfilter = Sites_array.filter((ele) => {
-    return ele.siteName.toLowerCase().includes(inputsearch.value.toLowerCase());
+    return ele.siteName.toLowerCase().includes(inputsearch.value.trim().toLowerCase());
   });
   displayTable(arrfilter);
 });
+
 let flag = localStorage.getItem("theme") || "light";
 const toggletheme = document.querySelector(".darkToggle");
 toggletheme.onclick = (e) => {

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sites Manager</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="https://img.icons8.com/ios-filled/32/lock.png" type="image/png">
 </head>
 <body>
     <!--
@@ -105,10 +105,13 @@
     </header>
 
      <main>
-        <section class="hero">
+        <section class="hero hero-img-pro">
+          <div class="anim_slide">
   <h1>🔐 Password Manager</h1>
   <p>Securely store your website credentials in your browser</p>
+  <p>"Your data is safe. Your mind is free"</p>
   <button>Start now!</button>
+  </div>
 </section>
 
  <section >
@@ -134,7 +137,7 @@
                <div class="input">
                 <div class="d-flex">
                <input name="password" type="password" placeholder="Password..." required />
-               <button type="button" class="showpass"><i class="fa fa-eye"></i></button>
+               <button type="button" class="showpass"><i class="fa fa-eye-slash"></i></button>
                <button type="button" class="btn btn_creatpass">Creat strong Password</button>
                 </div>
                <p class="message_password"></p>
@@ -146,12 +149,15 @@
         </div>
     </section>
 
-     <section class="image_break">
-
+     <section class="image_break hero-img-pro">
+      <div class="image_move">
+<h2>"Take control of your digital life"</h2>
+<p>Organize and protect all your passwords — your future self will thank you.</p>
+</div>
 </section>
 <section class="Sites" id="show">
     <div class="container">
-        <div class="d-flex jus-between">
+        <div class="d-flex jus-between text-center">
                 <h2>Sites schedule</h2>
 <form>
     <label for="#search">Search Here!</label>
@@ -185,30 +191,30 @@
 
   
     <footer class="footer text-center d-flex jus-between">
-        <div>
-  <p>🔐 PassBox — Securely save your passwords.</p>
-  <p>Copyright © Your Website 2025</p>
-  <span>Nour Yaseen</span>
+        <div class="d-flex-col gap-15 jus">
+   <p>🔐 <strong>PassBox</strong> — Securely manage and store your passwords with ease.</p>
+  <p>&copy; 2025 All rights reserved.</p>
+  <p>Made with ❤️ by &nbsp;<span class="author">Nour Yaseen</span></p>
   </div>
-<div class="d-flex gap-15 jus ">
-    <p>Contact Me!  </p>
+<div class="d-flex gap-15 jus">
+     <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nooryaseen510@gmail.com&su=Hello%20from%20PassBox" target="_blank">
+  Contact Me!
+</a>
+</p>
     <div class="text-center d-flex gap-15 jus">
-          <a href="#"
-            ><img src="./images/facebook-icon.svg" width="40px"
-          /></a>
-          <a href="#"
-            ><img src="./images/insta-icon.svg" width="40px"
-          /></a>
-          <a href="#"
-            ><img src="./images/twiter-icon.svg" width="40px"
-          /></a>
+         <a href="https://www.facebook.com/share/18DqQrGGAM/" target="_blank" class="icon-circle">
+    <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook">
+  </a>
+         <a href="https://www.linkedin.com/in/nour-yaseen-42a809332/" target="_blank" class="icon-circle linkedin">
+    <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn">
+  </a>
+          <a href="https://github.com/nour-yaseen25" target="_blank" class="icon-circle">
+    <img src="https://img.icons8.com/ios-filled/30/ffffff/github.png" alt="GitHub">
+  </a>
           </div>
         </div>
 </footer>
- 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     <script src="./main.js"></script>
