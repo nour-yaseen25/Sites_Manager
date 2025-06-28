@@ -150,7 +150,8 @@ flex-grow: 1;
     background-position: center;
     background-repeat: no-repeat;
     filter: brightness(.9);
-    height: 100vh;
+    height: 80vh;
+      padding: 50px;   
 }
 .hero-img-pro{
    color: rgb(0, 0, 0);
@@ -186,7 +187,7 @@ flex-grow: 1;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100vh;
+    height: 100vh; 
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 100px 20px;
