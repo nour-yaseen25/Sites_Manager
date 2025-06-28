@@ -151,6 +151,7 @@ flex-grow: 1;
     background-repeat: no-repeat;
     filter: brightness(.9);
     padding: 50px; 
+       height:100vh;
 }
 .hero-img-pro{
    color: rgb(0, 0, 0);
