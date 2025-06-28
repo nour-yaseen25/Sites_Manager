@@ -190,7 +190,7 @@ flex-grow: 1;
     height: 100vh;
     color: rgb(0, 0, 0);
     text-align: center;
-    padding: 100px 50px;
+    padding: 100px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
