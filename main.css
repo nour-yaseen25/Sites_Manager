@@ -1,32 +1,5 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.container {
-  width: calc(100% - 80px);
-  margin: 0 auto;
-  padding: 20px;
-}
-section{
-    width: 100%;
-}
-.row{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-a{
-    text-decoration: none;
-}
-.logo{
-  font-size: 30px;
-  font-weight: 600;   
-}
-.logo a{
-    color:#000;
-}
+@import url(./base.css);
+
 .header{
      box-Shadow: 10px 10px 10px rgba(0,0,0,.5);
 
@@ -37,7 +10,6 @@ a{
     margin: auto;
     font-size: 20px;
     padding: 10px;
-    font-weight: bold;
     text-shadow: 3px 5px 10px black;
     position: sticky;
     top:0;
@@ -50,27 +22,11 @@ a{
 nav a {
     color: #000000d4;
 }
-nav a:hover {
-  transform: scale(1.2);
-  color: #0f0d0dd4;
-}
-
-.d-flex{
-    display: flex;
-    flex-wrap: wrap;
-}
-.d-flex-col{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.gap-15{
-    gap:15px;
-}
-.jus{
-    justify-content: center;
-    align-items: center;
-}
+.menu-icon {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
 .Sites{
     padding:30px 0;
     margin: auto;
@@ -83,6 +39,7 @@ nav a:hover {
 .Sites table{
 min-width: 600px;
     width: 100%;
+    border: #949494 solid;
     background-color: #fff;
     text-align: center;
     border-collapse: collapse;
@@ -95,13 +52,14 @@ min-width: 600px;
 }
 
 .Sites td {
-  font-size: 15px;
+  font-size: 20px;
     border: 1px solid #ddd;
-    padding:12px;
+    padding:10px;
 }
 .Sites th {
     border: 1px solid #323232;
     padding:12px;
+    font-size: 25px;
 }
 .Sites h2,.create-user h2{
  font-size: 40px;
@@ -111,11 +69,8 @@ min-width: 600px;
 .Sites tbody tr:hover {
     background-color:#f1f1f1 ;
 }
-.btn{
-    background-color: transparent;
-    border-radius: 5px;
-cursor: pointer;
-  border: none;
+.showpass{
+border: #ccc solid;
 }
 .create-user{
   padding:20px;
@@ -136,14 +91,15 @@ color: red;
 }
 .create-user input{
     width:100%;
-     padding:10px;
       border: #ccc solid;
 
 }
-input:focus{
-    background-color: #82a8fbd4;
-    border-radius: 10px;
+.create-user input {
+  font-size: 20px;       
+  padding: 8px 12px;      
+  width: 100%;           
 }
+
 .input{
      width: 100%;
      position: relative;
@@ -161,10 +117,11 @@ input:focus{
         /*#00ab00d4*/
  background-color:#ffcc00;
      padding:12px 24px;
-       font-size: 20px;
+       font-size: 30px;
     }
         .btn-show{
             padding:10px;
+            font-size: 20px;
              background-color: #5187fbd4 !important;
     }
  .btn-delete{
@@ -178,6 +135,7 @@ input:focus{
     .btn_creatpass{
         background-color: #5187fbd4;
      padding:10px; 
+     font-size: 20px;
     }
 
 .input input[type="password"],.input input[type="text"] {
@@ -197,15 +155,13 @@ flex-grow: 1;
 .hero-img-pro{
    color: rgb(0, 0, 0);
     text-align: center;
-    padding: 50px;
     display: flex;
+    gap:20px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.anim_slide{
-  animation: slideshow 1.5s;
-}
+
 .hero h1,.image_break h2 {
   font-size: 60px;
 }
@@ -248,9 +204,6 @@ flex-grow: 1;
 .message_password.orange{
     color:orange;
 }
-.text-center{
-    text-align: center;
-}
 .footer {
   background-color:  #ffcc00;
   color: #000000;
@@ -258,10 +211,6 @@ flex-grow: 1;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-top: 1px solid #ddd;
   padding: 20px;
-}
-.jus-between{
-justify-content: space-around;
-align-items: center;
 }
 .search_by_name {
     flex: 1;
@@ -273,10 +222,6 @@ align-items: center;
     color: #0c0b08;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
-body.dark{
-    background-color: #292929;
-    color: #fff;
-}
 body.dark footer{
   background-color: #1a1a1a;
   color: #ccc;
@@ -285,11 +230,11 @@ body.dark footer{
 body.dark .hero{
   filter: brightness(0.6);
 }
-body.dark header a{
+body.dark .header a{
     color:#fff;
 }
 body.dark header{
-  box-Shadow: 10px 10px 15px rgba(255, 255, 255, 0.5);
+  box-Shadow: 10px 10px 15px rgba(215, 212, 212, 0.5);
 }
 body.dark header,body.dark .image_break{
 filter: brightness(0.8);
@@ -314,88 +259,6 @@ body.dark tbody tr:hover {
 }
 body.dark label{
     color:#fff;
-}
-body.dark input{
-  background-color: #727272;
-  color: white;
-  border: 1px solid #555;
-}
-body.dark input::placeholder {
-  color: #ccc;
-}
-body.dark i{
-    background-color: #727272;
-  color: white;
-}
-  body {
-    transition: background-color 0.5s ease, color 0.5s ease;
-  }
-
-@media  screen and (max-width: 768px)
-{
-  th, td {
-    font-size: 12px;
-    padding: 6px;
-  }
-  .hero h1,.image_break h2 {
-  font-size: 30px;
-  }
-
-.hero p,.image_break p {
-  font-size: 15px;
-  padding: 5px;
-}
-.Sites h2,.create-user h2{
- font-size: 20px;
-/* background-color: #ffcc00;*/
- padding:10px;   
-}
-.header{
-    font-size: 10px;
-    padding:0;
-}
-.logo{
-  font-size: 20px;
-  font-weight: 500;   
-}
-     .btn-show{
-            padding:0;
-    }
-    .container {
-  width:100%;
-  margin: 0 auto;
-}
-.swal2-container input{
-  font-size: 15px;
-  text-align: center;
-  width: 80%;
-}
-
-}
-@media  screen and (max-width: 375px)
-{
-
-  .swal2-container label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.swal2-input{
-  font-size: 12px !important;
-  text-align: center;
-  width: 90%;
-}
-.my-btn-confirm{
-
-  padding: 10px;
-}
-
-}
-p::selection {
-    background-color: green;
-    color: #fff;
 }
 .swal2-container {
   backdrop-filter: blur(8px);
@@ -434,16 +297,6 @@ padding: 20px;
 body.dark .footer a,body.dark .footer span {
   color: #ffcc00;
 }
-@keyframes slideshow {
-  from{
-    transform:translateX(-100%);
-
-  }
-  to{
-    transform:translatex(0);
-  }
-}
-
 .icon-circle {
   width: 50px;
   height: 50px;
@@ -466,3 +319,161 @@ body.dark .footer a,body.dark .footer span {
 body.dark .icon-circle {
   background-color: #444; /* خلفية داكنة */
 }
+@media  screen and (min-width: 1600px)
+{
+   .Sites th, .Sites td {
+    font-size: 30px;
+  }
+  .icon-circle {
+  width: 70px;
+  height: 70px;
+}
+  .footer{
+    font-size: 30px;
+  }
+  input::placeholder{
+    font-size: 30px;
+  }
+  .create-user input{
+       font-size: 60px;
+    padding: 10px 24px;
+    height: 70px;
+    box-sizing: border-box;
+    }
+    .search_by_name{
+       padding: 20px;
+       font-size: 30px;
+    }
+    .Sites label{
+      font-size: 35px;
+      
+    }
+  .hero h1 {
+  font-size: 140px;
+  }
+  .image_break h2{
+    font-size: 100px;
+  }
+  .hero button{
+    font-size: 30px;
+  }
+
+.hero p,.image_break p {
+  font-size: 40px;
+ 
+}
+.Sites h2,.create-user h2{
+ font-size: 100px;
+ padding:20px;   
+}
+.header{
+    font-size: 30px;
+    
+}
+.logo{
+  font-size: 60px;
+  font-weight: 500;   
+}
+
+    .btn-delete,.btn-edit,.btn-form{
+      font-size: 30px;
+    } 
+    .btn_creatpass{
+      font-size: 25px;
+    }
+    .hero button{
+      font-size: 50px;
+      padding: 30px;
+    }
+
+}
+
+@media  screen and (max-width: 375px)
+{
+/*
+  .swal2-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.swal2-input{
+  font-size: 12px !important;
+  text-align: center;
+  width: 90%;
+}
+.my-btn-confirm{
+
+  padding: 10px;
+}
+*/
+}
+ nav {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+@media  screen and (max-width: 768px)
+{
+  
+  th, td {
+    font-size: 12px;
+    padding: 6px;
+  }
+  /*
+  .hero h1,.image_break h2 {
+  font-size: 30px;
+  }
+
+.hero p,.image_break p {
+  font-size: 15px;
+  padding: 5px;
+}
+.Sites h2,.create-user h2{
+ font-size: 20px;
+/* background-color: #ffcc00;*//*
+ padding:10px;   
+}
+
+.header{
+    font-size: 10px;
+    padding:0;
+}
+
+.logo{
+  font-size: 45px;
+  font-weight: 500;   
+}
+    */
+    .container {
+  width:100%;
+  margin: 0 auto;
+}
+.swal2-container input{
+  font-size: 15px;
+  text-align: center;
+  width: 80%;
+}
+  nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+         background-color: #ffcc00;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+}
+

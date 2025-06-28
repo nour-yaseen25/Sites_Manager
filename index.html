@@ -85,59 +85,57 @@
      <header class="header">
         <div class="container">
             <div class="row gap-15">
-                <div class="logo">
-                    <a href="#">Sites Manager</a>
+                <div class="logo d-flex gap-5 jus">
+                   <a href="#">Sites Manager</a>
                 </div>
-                   <div>
-                        <button class="darkToggle btn btn-show">🌙 Dark Mode</button>
-        </div>
-
-                <nav  class="d-flex gap-15 jus">
-                    <div  class="d-flex gap-15 jus">
+                  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                <nav id="nav">
+                   <button class="darkToggle btn btn-show">🌙 Dark Mode</button>
+              
                     <a href="./index.html">Home</a>
                     <a href="#adding"> Adding form</a>
                     <a href="#show"> Show</a>
-                    </div>
-                  
+<button class="btn btn-show"id="toggle-lang">Arabic</button>
+   
                 </nav>
             </div>
         </div>
     </header>
 
      <main>
-        <section class="hero hero-img-pro">
-          <div class="anim_slide">
+        <section class="hero">
+          <div class="anim_slide hero-img-pro">
   <h1>🔐 Password Manager</h1>
   <p>Securely store your website credentials in your browser</p>
   <p>"Your data is safe. Your mind is free"</p>
-  <button>Start now!</button>
+  <a href="#adding"><button class="btn" data-i18n="add_site_btn">Start now!</button></a>
   </div>
 </section>
 
- <section >
-        <div class="container create-user" id="adding">
+ <section id="adding">
+        <div class="container create-user">
             <h2>Add new Site</h2>
             <form class="create_form">
                 <div class="input">
-                <input name="siteName" type="text" placeholder="Site_Name... " required />
+                <input name="siteName" type="text" placeholder="Enter Site_Name... " data-i18n-placeholder="form_site"required />
                 <p class="message_siteName"></p>
                 </div>
 <div class="input">
-               <input name="siteURL" type="url" placeholder="Site_URL..." required />
+               <input name="siteURL" type="url" placeholder="Enter Site_URL..." required  data-i18n-placeholder="form_url"/>
                <p class="message_siteURL"></p>
                </div>
 <div class="input">
-               <input name="username" type="text" placeholder="Username..." required />
+               <input name="username" type="text" placeholder="Enter Username..." data-i18n-placeholder="form_user" required />
                <p class="message_username"></p>
                </div>
                <div class="input">
-               <input name="emailuser" type="email" placeholder="Enter your Email..." required />
+               <input name="emailuser" type="email" placeholder="Enter your Email..." data-i18n-placeholder="form_email" required />
                <p class="message_emailuser"></p>
                </div>
                <div class="input">
                 <div class="d-flex">
-               <input name="password" type="password" placeholder="Password..." required />
-               <button type="button" class="showpass"><i class="fa fa-eye-slash"></i></button>
+               <input name="password" type="password" placeholder="Enter Password..." data-i18n-placeholder="form_pass" required />
+               <button type="button" class="btn showpass"><i class="fa fa-eye-slash"></i></button>
                <button type="button" class="btn btn_creatpass">Creat strong Password</button>
                 </div>
                <p class="message_password"></p>
@@ -168,13 +166,13 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Icon</th>
-                        <th>Site Name</th>
-                        <th>Site URL</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Action</th>
+                        <th data-i18n="th_icon">Icon</th>
+                        <th data-i18n="th_site">Site Name</th>
+                        <th data-i18n="th_url">Site URL</th>
+                        <th data-i18n="th_username">Username</th>
+                        <th data-i18n="th_email">Email</th>
+                        <th data-i18n="th_password">Password</th>
+                        <th data-i18n="th_actions">Action</th>
                     </tr>
                 </thead>
                 <tbody class="Sites_info">
@@ -190,14 +188,14 @@
     </main>
 
   
-    <footer class="footer text-center d-flex jus-between">
+    <footer class="footer text-center d-flex jus-between gap-15">
         <div class="d-flex-col gap-15 jus">
-   <p>🔐 <strong>PassBox</strong> — Securely manage and store your passwords with ease.</p>
-  <p>&copy; 2025 All rights reserved.</p>
-  <p>Made with ❤️ by &nbsp;<span class="author">Nour Yaseen</span></p>
+   <p data-i18n="hero_title">🔐 PassBox — Securely manage and store your passwords with ease.</p>
+  <p data-i18n="footer_text">&copy; 2025 All rights reserved.</p>
+  <p data-i18n="footer_madeby">Made with ❤️ by &nbsp;<span class="author">Nour Yaseen</span></p>
   </div>
 <div class="d-flex gap-15 jus">
-     <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nooryaseen510@gmail.com&su=Hello%20from%20PassBox" target="_blank">
+     <p ><a href="https://mail.google.com/mail/?view=cm&fs=1&to=nooryaseen510@gmail.com&su=Hello%20from%20PassBox" target="_blank" data-i18n="footer_contact">
   Contact Me!
 </a>
 </p>

@@ -236,7 +236,10 @@ function edit(index) {
     }
   });
 }
-
+function toggleMenu() {
+      document.getElementById('nav').classList.toggle('active');
+    }
+    
 window.onscroll = function (e) {
  const image_move=document.querySelector(".image_move");
  const create_form=document.querySelector(".create-user");
@@ -423,3 +426,71 @@ console.log(
     "https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_url"
   )
 );
+let currentLang = "en";
+
+const translations = {
+  en: {
+    hero_title: "🔐 PassBox — Securely manage and store your passwords with ease.",
+    add_site_btn: "Add Site",
+    footer_text: "Copyright © 2025 All rights reserved.",
+     footer_madeby: "Made with ❤️ by Nour Yaseen",
+    footer_contact: "Contact Me!",
+     th_icon: "Icon",
+    th_site: "Site",
+    th_username: "Username",
+    th_url :"Site URL",
+    th_email: "Email",
+    th_password: "Password",
+    th_actions: "Actions",
+     form_site: "Enter Site_Name... ",
+  form_user: "Enter Site_URL...",
+  form_url :"Enter Username...",
+  form_email: "Enter your Email...",
+  form_pass: "Enter Password...",
+  form_add: "Save"
+   
+  },
+  ar: {
+    hero_title: "🔐 باس بوكس – خزّن كلمات مرورك بأمان",
+    add_site_btn: "أضف موقع",
+    footer_text: "حقوق النشر © موقعك 2025",
+      footer_madeby: "صُنع بواسطة Nour Yaseen",
+    footer_contact: "تواصل معي",
+     th_icon: "أيقونة",
+    th_site: "الموقع",
+    th_url :"الرابط",
+    th_username: "اسم المستخدم",
+    th_email: "البريد الإلكتروني",
+    th_password: "كلمة السر",
+    th_actions: "إجراءات",
+      form_site: "أدخل رابط الموقع...",
+  form_user: "أدخل اسم المستخدم...",
+  form_url :"ادخل رابط الموقع...",
+  form_email: "أدخل البريد الإلكتروني...",
+  form_pass: "أدخل كلمة السر...",
+  form_add: "إضافة"
+  }
+};
+
+function updateLanguage(lang) {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[lang][key] || key;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    el.placeholder = translations[lang][key] || key;
+  });
+
+  document.getElementById("toggle-lang").textContent = lang === "ar" ? "English" : "Arabic";
+  document.body.dir = lang === "ar" ? "rtl" : "ltr";
+  currentLang = lang;
+}
+//toggle button
+document.getElementById("toggle-lang").addEventListener("click", () => {
+  const newLang = currentLang === "en" ? "ar" : "en";
+  updateLanguage(newLang);
+});
+//update first time
+updateLanguage(currentLang);
+
